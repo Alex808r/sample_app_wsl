@@ -1,4 +1,4 @@
 # README
 
-Майкл Хартл. Ruby on Rails Tutorial
+Майкл Хартл. Ruby on Rails Tutorial.
 sample_app_6th_ed
