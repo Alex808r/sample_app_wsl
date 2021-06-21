@@ -3,23 +3,11 @@
 <!-- указывает с помощью < % %> на то, что Rails должен вызвать функцию provide, и связать строку "Home" с меткой :title.
 Затем, в заголовке мы используем тесно
 связанную запись < %= %> для вставки заголовка в шаблон с помощью Ruby-функции yield -->
+<!-- было <title>       Home | Ruby on Rails Tutorial Sample App </title> -->
 
-<!DOCTYPE html>
-<html>
-<head>
-
-  <!-- было <title>       Home | Ruby on Rails Tutorial Sample App </title> -->
-
-  <title> <%= yield(:title) %> | Ruby on Rails Tutorial Sample App </title>
-
-
-</head>
-  <body>
-    <h1>Sample App</h1>
-    <p>
-      This is the home page for the
-      <a href="https://www.railstutorial.org/">Ruby on Rails Tutorial</a>
-      sample application.
-    </p>
-  </body>
-</html>
+<h1>Sample App</h1>
+<p>
+  This is the home page for the
+  <a href="https://www.railstutorial.org/">Ruby on Rails Tutorial</a>
+  sample application.
+</p>
