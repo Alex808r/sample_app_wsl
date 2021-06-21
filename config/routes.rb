@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   # так как он определен корневым маршуртом при помощи root
 
   get 'static_pages/help'
-  get 'static_pages/about'
+  get '/about',   to: 'static_pages#about'   #get 'static_pages/about'
+  get '/contact', to: 'static_pages#contact' #get 'static_pages/contact'
 
   #root 'application#hello'
 end
