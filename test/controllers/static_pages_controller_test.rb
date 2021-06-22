@@ -16,7 +16,7 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     #
     #assert_select "title", "Home | Ruby on Rails Tutorial Sample App"
-    assert_select "title", "Home | #{@base_title}"
+    assert_select "title", "#{@base_title}"
     #
     assert_select "h1", "Sample App"
   end
