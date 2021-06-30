@@ -17,6 +17,7 @@ module ApplicationHelper
       base_title
     else
       page_title + " | " + base_title
+      #"#{page_title} | #{base_title}" - альтернативная запись
     end
   end
 
