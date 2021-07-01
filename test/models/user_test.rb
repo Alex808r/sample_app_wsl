@@ -3,7 +3,7 @@ require "test_helper"
 class UserTest < ActiveSupport::TestCase
   #создает модель перед запуском тестов
   def setup
-    @user = User.new(name: "Example User", email: "user@example.com")
+    @user = User.new(name: "Example User", email: "user@example.com", password: "foobar", password_confirmation: "foobar")
   end
 
   #тест валидации модели созданной в setup
@@ -65,6 +65,18 @@ class UserTest < ActiveSupport::TestCase
     @user.email = mixed_case_email
     @user.save
     assert_equal mixed_case_email.downcase, @user.reload.email
+  end
+
+  #тест на проверку пустой пароль или нет
+  test "password should be present (nonblank)" do
+    @user.password = @user.password_confirmation = " " * 6
+    assert_not @user.valid?
+  end
+
+  #тест на проверку длинны пароля минимум 6 символов
+  test "password should have a minimum length" do
+    @user.password = @user.password_confirmation = "a" * 5 #множественное пристваивание password и password_confirmation одновременно пристваивается значение а*5
+    assert_not @user.valid?
   end
 
 

@@ -6,4 +6,9 @@ class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX },  uniqueness: { case_sensitive: false }
   # валидация наличия емайл и его длины не более 255 и соответстия требованиям емайла и              уникальности   чувствительности к регистру
+
+  #для создания пароля включаем метод затем добавляем в таблицу колонку password_digest
+  has_secure_password
+  validates :password, presence: true, length: { minimum: 6 } #валидация пароля не пустой, минимум 6 символов
+
 end
