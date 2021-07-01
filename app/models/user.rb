@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  before_save { self.email = email.downcase! } # перевод емайл в нижний регистр перед сохранением в базу данных
+  #before_save { self.email = email.downcase } # перевод емайл в нижний регистр перед сохранением в базу данных
+  before_save { email.downcase! }
   validates :name,  presence: true, length: { maximum: 50 } #валидация наличия имени и его длинны не более 50
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
