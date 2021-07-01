@@ -74,6 +74,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   #тест на проверку длинны пароля минимум 6 символов
+  # 
   test "password should have a minimum length" do
     @user.password = @user.password_confirmation = "a" * 5 #множественное пристваивание password и password_confirmation одновременно пристваивается значение а*5
     assert_not @user.valid?
